@@ -1,0 +1,9 @@
+[user]
+	name = André Fernandes
+	email = andrefernandes6@gmail.com
+[push]
+	default = matching
+[color]
+	diff = auto
+	status = auto
+	branch = auto
