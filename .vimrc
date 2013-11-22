@@ -27,12 +27,12 @@ autocmd! bufwritepost $MYVIMRC source $MYVIMRC
 
 
 " General 
-set nocompatible			" be iMproved
+set nocompatible        " be iMproved
 set history=1024
-set undolevels=1024	
-set autowrite					" writes on make/shell commands
-set autoread					" reloads file when changed externally
-set hidden						" hides buffers instead of closing 
+set undolevels=1024
+set autowrite           " writes on make/shell commands
+set autoread		    " reloads file when changed externally
+set hidden		        " hides buffers instead of closing 
 
 " Backup / Swap
 set nobackup
@@ -43,8 +43,8 @@ set visualbell
 set noerrorbells
 
 " Mouse
-set mouse=a           " enable mouse
-set mousehide					" hide mouse while typing 
+set mouse=a             " enable mouse
+set mousehide           " hide mouse while typing 
 
 " Filetype
 filetype on
@@ -52,12 +52,12 @@ filetype plugin on
 filetype indent on
 
 " Visual
-syntax on							" enable syntax highlighting
-set title							" window/terminal title
-set number						" show line numbers
-set ruler							" show ruler
-set showcmd						" show command being typed 
-set wrap							" wrap lines
+syntax on               " enable syntax highlighting
+set title               " window/terminal title
+set number              " show line numbers
+set ruler               " show ruler
+set showcmd             " show command being typed 
+set wrap                " wrap lines
 set term=xterm-256color
 colorscheme default
 
@@ -72,59 +72,56 @@ set wildmode=list:longest		" shell like
 
 " Folding
 set foldenable
-set foldmethod=marker		" methods: manual,syntax,indent,marker
-set foldmarker={{{,}}}	" marker definition
+set foldmethod=marker   " methods: manual,syntax,indent,marker
+set foldmarker={{{,}}}  " marker definition
 
 " Match and search
 set hlsearch            " enable search highlighting
 set incsearch           " incrementally match the search
-set wrapscan						" search scan wraps lines
+set wrapscan            " search scan wraps lines
 set ignorecase          " ignore case in search patterns
 set smartcase           " override 'ignorecase' for upper case chars
 
 " Matching brackets
-set showmatch						" briefly jumps to matching brackets
-set matchtime=5					" bracket blinking time of 'showmatch'
+set showmatch           " briefly jumps to matching brackets
+set matchtime=5         " bracket blinking time of 'showmatch'
 
 " Unprintable Characters
 set nolist
 set listchars=tab:▸\ ,eol:¬
 highlight SpecialKey guifg=#4a4a59
-highlight NonText guifg=#4a4a59
+highlight NonText    guifg=#4a4a59
 noremap <leader>l :set list!<cr>
 
 " Tabs
-set tabstop=2     " number of spaces a <tab> in file counts for
-set softtabstop=2	" number of spaces when inserting a <tab>
-set shiftwidth=2  " number of spaces for (auto)indent
-set backspace=2		" allow backspacing over indent
-"set expandtab
-"set smarttab
+set expandtab           " insert spaces instead of tabs
+set softtabstop=4       " number of spaces when expanding tabs (expandtab)
+set shiftwidth=4        " number of spaces for (auto)indent
+set tabstop=4           " visual number of spaces a tab counts for (noexpandtab)
+autocmd FileType ruby setlocal expandtab softtabstop=2 shiftwidth=2 
 
 " Identation
-set autoindent    " copy indentation from previous line
-set smartindent		" add indentation when opening a new block
-"set cindent
+set autoindent          " copy indentation from previous line
+set smartindent	        " add indentation when opening a new block
+" set cindent
 
 
 " Vundle package manager
 "
-" git clone https://github.com/gmarik/vundle.git 
-"						~/.vim/bundle/vundle
+" git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 " :BundleList          - list configured bundles
 " :BundleInstall(!)    - install(update) bundles
 " :BundleSearch(!) foo - search(or refresh cache first) for foo
 " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 
-set nocompatible               " Vundle 
-filetype off                   " Vundle 
+set nocompatible                        " Vundle 
+filetype off                            " Vundle 
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
 Bundle 'gmarik/vundle'
-
 
 " Nerd Tree
 Bundle 'scrooloose/nerdtree'
@@ -147,11 +144,7 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'digitaltoad/vim-jade'
 Bundle 'vim-stylus'
 
-Bundle 'groenewege/vim-less'
-Bundle 'hail2u/vim-css3-syntax'
-Bundle 'skammer/vim-css-color'
-
 Bundle 'scrooloose/syntastic'
 " Bundle 'rip-rip/clang_complete'
 
-filetype plugin indent on			" Vundle
+filetype plugin indent on	        " Vundle
