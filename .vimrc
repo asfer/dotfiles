@@ -58,8 +58,8 @@ set number              " show line numbers
 set ruler               " show ruler
 set showcmd             " show command being typed 
 set wrap                " wrap lines
-set term=xterm-256color
-colorscheme default
+set t_Co=256
+set background=light
 
 " Enconding
 set encoding=utf-8
@@ -120,31 +120,38 @@ filetype off                            " Vundle
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-" let Vundle manage Vundle
+" Vundle
 Bundle 'gmarik/vundle'
 
-" Nerd Tree
+" colorschemes
+Bundle 'flazz/vim-colorschemes'
+colorscheme wombat256 
+
+" NERDTree
 Bundle 'scrooloose/nerdtree'
-let g:NERDTreeWinSize = 20
+let g:NERDTreeWinSize = 25
+let NERDTreeIgnore = ['\.o$','\.pyc$','\.pickle$','\.pdf$','\.png$']
+noremap <leader>nt :NERDTreeToggle<cr>
 autocmd vimenter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-noremap <leader>nt :NERDTreeToggle<cr>
+
+" YouCompleteMe
+Bundle 'Valloric/YouCompleteMe'
+let g:ycm_path_to_python_interpreter = '/usr/bin/python2'
 
 " tComment
 Bundle 'tomtom/tcomment_vim'
 vnoremap // :TComment<CR>
 nnoremap // :TComment<CR>
 
-Bundle 'tpope/vim-surround'
-Bundle 'ervandew/supertab' 
-Bundle 'matchit.zip'
+Bundle 'FuzzyFinder'
 Bundle 'UltiSnips'
+Bundle 'tpope/vim-surround'
+Bundle 'matchit.zip'
 
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'vim-stylus'
+" Bundle 'kchmck/vim-coffee-script'
+" Bundle 'digitaltoad/vim-jade'
+" Bundle 'vim-stylus'
 
-Bundle 'scrooloose/syntastic'
-" Bundle 'rip-rip/clang_complete'
 
 filetype plugin indent on	        " Vundle
