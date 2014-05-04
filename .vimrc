@@ -23,7 +23,8 @@ noremap <leader>ev :vsplit $MYVIMRC<cr>
 noremap <leader>sv :source $MYVIMRC<cr>
 autocmd! bufwritepost $MYVIMRC source $MYVIMRC
 
-
+" Make
+noremap <F4> :make<CR>
 
 
 " General 
@@ -145,6 +146,8 @@ vnoremap // :TComment<CR>
 nnoremap // :TComment<CR>
 
 Bundle 'FuzzyFinder'
+Bundle 'L9'
+
 Bundle 'UltiSnips'
 Bundle 'tpope/vim-surround'
 Bundle 'matchit.zip'
