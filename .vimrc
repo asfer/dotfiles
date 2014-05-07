@@ -138,7 +138,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " YouCompleteMe
 Bundle 'Valloric/YouCompleteMe'
-" let g:ycm_path_to_python_interpreter = '/usr/bin/python2'
 
 " tComment
 Bundle 'tomtom/tcomment_vim'
@@ -147,15 +146,14 @@ nnoremap // :TComment<CR>
 
 Bundle 'L9'
 Bundle 'FuzzyFinder'
-Bundle 'L9'
 
 Bundle 'UltiSnips'
 Bundle 'tpope/vim-surround'
 Bundle 'matchit.zip'
 
-" Bundle 'kchmck/vim-coffee-script'
-" Bundle 'digitaltoad/vim-jade'
-" Bundle 'vim-stylus'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'digitaltoad/vim-jade'
+Bundle 'vim-stylus'
 
 
 filetype plugin indent on	        " Vundle
