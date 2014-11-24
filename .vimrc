@@ -108,28 +108,20 @@ set smartindent	        " add indentation when opening a new block
 
 
 " Vundle package manager
-"
-" git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+set nocompatible
+filetype off
 
-set nocompatible                        " Vundle 
-filetype off                            " Vundle 
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " Vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " colorschemes
-Bundle 'flazz/vim-colorschemes'
-colorscheme wombat256 
+Plugin 'flazz/vim-colorschemes'
 
 " NERDTree
-Bundle 'scrooloose/nerdtree'
+Plugin  'scrooloose/nerdtree'
 let g:NERDTreeWinSize = 25
 let NERDTreeIgnore = ['\.o$','\.pyc$','\.pickle$','\.pdf$','\.png$']
 noremap <leader>nt :NERDTreeToggle<cr>
@@ -137,23 +129,24 @@ autocmd vimenter * NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 " YouCompleteMe
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 
 " tComment
-Bundle 'tomtom/tcomment_vim'
+Plugin 'tomtom/tcomment_vim'
 vnoremap // :TComment<CR>
 nnoremap // :TComment<CR>
 
-Bundle 'L9'
-Bundle 'FuzzyFinder'
+Plugin 'L9'
+Plugin 'FuzzyFinder'
 
-Bundle 'UltiSnips'
-Bundle 'tpope/vim-surround'
-Bundle 'matchit.zip'
+Plugin 'UltiSnips'
+Plugin 'tpope/vim-surround'
+Plugin 'matchit.zip'
 
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'digitaltoad/vim-jade'
-Bundle 'vim-stylus'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'vim-stylus'
 
-
+call vundle#end()
 filetype plugin indent on	        " Vundle
+
